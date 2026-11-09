@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chevy Pop LS3 Twin Turbo Swap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Oswald', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#e11d48', // Rose 600 - Aggressive Red
+                            dark: '#0a0a0a', // True Black
+                            gray: '#171717', // Neutral 900
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "radial-gradient(circle at center, #1f1013 0%, #0a0a0a 100%)",
+                        'carbon-fiber': "linear-gradient(45deg, #111 25%, transparent 25%, transparent 75%, #111 75%, #111), linear-gradient(45deg, #111 25%, transparent 25%, transparent 75%, #111 75%, #111)",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for elements not easily handled by standard Tailwind utilities */
+        body {
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+        }
+        .carbon-bg {
+            background-image: 
+                linear-gradient(45deg, #1a1a1a 25%, transparent 25%, transparent 75%, #1a1a1a 75%, #1a1a1a), 
+                linear-gradient(45deg, #1a1a1a 25%, transparent 25%, transparent 75%, #1a1a1a 75%, #1a1a1a);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(225, 29, 72, 0.5);
+        }
+        .border-glow {
+            box-shadow: 0 0 15px rgba(225, 29, 72, 0.3);
+        }
+    </style>
+</head>
+<body class="font-body antialiased overflow-x-hidden selection:bg-brand-red selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-brand-dark/80 border-b border-white/10" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-heading font-bold text-2xl tracking-wider text-white uppercase"><span class="text-brand-red">V8</span> POP</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#el-proyecto" class="text-gray-300 hover:text-white transition uppercase text-sm font-semibold tracking-wide">El Proyecto</a>
+                    <a href="#arsenal" class="text-gray-300 hover:text-white transition uppercase text-sm font-semibold tracking-wide">El Arsenal</a>
+                    <a href="#desafios" class="text-gray-300 hover:text-white transition uppercase text-sm font-semibold tracking-wide">Desafíos</a>
+                </div>
+                <div>
+                    <a href="#cta" class="inline-flex items-center justify-center px-6 py-2 border border-transparent text-sm font-heading font-bold rounded-md text-white bg-brand-red hover:bg-red-700 hover:scale-105 transition-transform uppercase tracking-widest border-glow">
+                        Arma tu Bestia
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-hero-pattern overflow-hidden min-h-screen flex items-center">
+        <!-- Decorative elements -->
+        <div class="absolute top-1/4 -left-64 w-96 h-96 bg-brand-red opacity-20 rounded-full blur-3xl mix-blend-screen"></div>
+        <div class="absolute bottom-1/4 -right-64 w-96 h-96 bg-brand-red opacity-10 rounded-full blur-3xl mix-blend-screen"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center px-4 py-2 rounded-full border border-brand-red/30 bg-brand-red/10 text-brand-red text-sm font-bold uppercase tracking-widest mb-6">
+                <span class="flex h-2 w-2 rounded-full bg-brand-red mr-2 animate-pulse"></span>
+                Proyecto Extremo
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-heading font-bold tracking-tight text-white mb-6 uppercase text-glow leading-none">
+                De Coche Diario a <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-red-500">Monstruo de Asfalto</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl mx-auto text-xl md:text-2xl text-gray-400 font-light mb-10">
+                Guía definitiva para realizar un Swap de <strong class="text-white">Motor LS3 Twin Turbo</strong> en un Chevy Pop (Corsa B). Más de 800 caballos en una carrocería de 900 kg.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#cta" class="px-8 py-4 text-lg font-heading font-bold uppercase tracking-wider text-white bg-brand-red rounded hover:bg-red-700 hover:scale-105 transition-all duration-300 border-glow border border-red-500 shadow-[0_0_20px_rgba(225,29,72,0.4)]">
+                    Descargar Guía Completa
+                </a>
+                <a href="#el-proyecto" class="px-8 py-4 text-lg font-heading font-bold uppercase tracking-wider text-white bg-transparent border-2 border-white/20 rounded hover:border-white/60 hover:bg-white/5 transition-all duration-300">
+                    Ver Detalles
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Divider -->
+    <div class="border-y border-white/10 bg-brand-gray/50 backdrop-blur">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-8 text-center divide-x divide-white/10">
+                <div>
+                    <div class="text-3xl md:text-5xl font-heading font-bold text-white mb-1">6.2L</div>
+                    <div class="text-xs md:text-sm text-gray-400 uppercase tracking-widest">Desplazamiento</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-5xl font-heading font-bold text-brand-red mb-1">800+</div>
+                    <div class="text-xs md:text-sm text-gray-400 uppercase tracking-widest">Caballos de Fuerza</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-5xl font-heading font-bold text-white mb-1">RWD</div>
+                    <div class="text-xs md:text-sm text-gray-400 uppercase tracking-widest">Tracción</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-5xl font-heading font-bold text-brand-red mb-1 text-glow">2x</div>
+                    <div class="text-xs md:text-sm text-gray-400 uppercase tracking-widest">Turbocargadores</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Arsenal Section (Parts) -->
+    <section id="arsenal" class="py-24 bg-brand-dark carbon-bg relative">
+        <div class="absolute inset-0 bg-black/80"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-brand-red font-bold tracking-widest uppercase text-sm mb-2">Piezas del Rompecabezas</h2>
+                <h3 class="text-4xl md:text-5xl font-heading font-bold text-white uppercase">El Arsenal Necesario</h3>
+                <div class="w-24 h-1 bg-brand-red mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Part 1 -->
+                <div class="bg-brand-gray/80 backdrop-blur p-8 border border-white/5 rounded-xl hover:border-brand-red/50 transition-colors group">
+                    <div class="w-14 h-14 bg-brand-red/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                    </div>
+                    <h4 class="text-2xl font-heading font-bold text-white mb-3 uppercase">Motor V8 LS3</h4>
+                    <p class="text-gray-400 font-light">El corazón de la bestia. Bloque de aluminio de 6.2 litros. Confiable, con un mercado de repuestos masivo y capaz de soportar boost extremo con internas forjadas.</p>
+                </div>
+                <!-- Part 2 -->
+                <div class="bg-brand-gray/80 backdrop-blur p-8 border border-white/5 rounded-xl hover:border-brand-red/50 transition-colors group">
+                    <div class="w-14 h-14 bg-brand-red/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h4 class="text-2xl font-heading font-bold text-white mb-3 uppercase">Kit Twin Turbo</h4>
+                    <p class="text-gray-400 font-light">Par de turbos de rodamiento de bolas (ej. Precision o Garrett), wastegates externas, válvulas de alivio e intercooler frontal personalizado (FMIC).</p>
+                </div>
+                <!-- Part 3 -->
+                <div class="bg-brand-gray/80 backdrop-blur p-8 border border-white/5 rounded-xl hover:border-brand-red/50 transition-colors group">
+                    <div class="w-14 h-14 bg-brand-red/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h4 class="text-2xl font-heading font-bold text-white mb-3 uppercase">Conversión a RWD</h4>
+                    <p class="text-gray-400 font-light">Eje trasero modificado (Ford 8.8 o similar cortado a medida), diferencial de deslizamiento limitado (LSD), árbol de transmisión a medida y túnel de transmisión fabricado.</p>
+                </div>
+                <!-- Part 4 -->
+                <div class="bg-brand-gray/80 backdrop-blur p-8 border border-white/5 rounded-xl hover:border-brand-red/50 transition-colors group">
+                    <div class="w-14 h-14 bg-brand-red/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
+                    </div>
+                    <h4 class="text-2xl font-heading font-bold text-white mb-3 uppercase">Soportes a Medida</h4>
+                    <p class="text-gray-400 font-light">Soportes de motor y transmisión fabricados en acero o aluminio (Custom Mounts). Requieren soldadura TIG/MIG directamente al subchasis reforzado.</p>
+                </div>
+                <!-- Part 5 -->
+                <div class="bg-brand-gray/80 backdrop-blur p-8 border border-white/5 rounded-xl hover:border-brand-red/50 transition-colors group">
+                    <div class="w-14 h-14 bg-brand-red/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                    </div>
+                    <h4 class="text-2xl font-heading font-bold text-white mb-3 uppercase">ECU Standalone</h4>
+                    <p class="text-gray-400 font-light">Sistemas como Haltech Elite, FuelTech o Holley Terminator X para controlar la inyección, el tiempo, el boost y todos los sensores del motor de forma independiente al auto.</p>
+                </div>
+                <!-- Part 6 -->
+                <div class="bg-brand-gray/80 backdrop-blur p-8 border border-white/5 rounded-xl hover:border-brand-red/50 transition-colors group">
+                    <div class="w-14 h-14 bg-brand-red/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h4 class="text-2xl font-heading font-bold text-white mb-3 uppercase">Frenos y Suspensión</h4>
+                    <p class="text-gray-400 font-light">Coilovers personalizados con resortes rígidos. Frenos de disco en las 4 ruedas (Big Brake Kit), bomba de freno de mayor caudal para detener este misil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section id="desafios" class="py-24 bg-brand-gray relative overflow-hidden">
+        <!-- Grunge/Texture Overlay -->
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-brand-red font-bold tracking-widest uppercase text-sm mb-2">Advertencia</h2>
+                    <h3 class="text-4xl md:text-5xl font-heading font-bold text-white uppercase mb-6 leading-tight">El Camino <br/><span class="text-brand-red">Al Infierno</span></h3>
+                    <p class="text-gray-400 text-lg mb-8 font-light">Meter un V8 con dos turbos en el vano motor de un auto compacto de tracción delantera no es atornillar y jugar. Es cirugía mayor.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-red-900/50 flex items-center justify-center text-brand-red font-bold border border-red-500/30">1</div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-heading font-bold text-white uppercase mb-1">Corte de Chasis y Firewall</h4>
+                                <p class="text-gray-400 text-sm">El cortafuegos original debe ser modificado extensamente y movido hacia atrás para que el bloque LS3 quepa longitudinalmente. El chasis debe ser reforzado con jaula antivuelco estructural y soportes tubulares (tubular front end).</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-red-900/50 flex items-center justify-center text-brand-red font-bold border border-red-500/30">2</div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-heading font-bold text-white uppercase mb-1">El Túnel de Transmisión</h4>
+                                <p class="text-gray-400 text-sm">El Chevy Pop no tiene túnel para un árbol de transmisión RWD. Deberás cortar el piso central y fabricar un túnel de chapa para acomodar la transmisión (Ej. T56 o TH400) y el eje cardán.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-red-900/50 flex items-center justify-center text-brand-red font-bold border border-red-500/30">3</div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-heading font-bold text-white uppercase mb-1">Gestión Térmica y Espacio</h4>
+                                <p class="text-gray-400 text-sm">Los turbos generan calor extremo. Encajarlos junto con sus tuberías (piping), intercooler y un radiador gigante requerirá reubicar la batería, cortar paneles frontales y crear salidas de aire en el cofre (hood vents).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="aspect-[4/3] bg-brand-dark rounded-2xl border border-white/10 p-2 shadow-2xl overflow-hidden relative">
+                        <!-- Simulated blueprint/wireframe art -->
+                        <div class="absolute inset-0 border-2 border-brand-red/20 m-4 rounded-xl flex items-center justify-center bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] bg-black overflow-hidden group">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-red/10 to-transparent"></div>
+                            
+                            <!-- Abstract car wireframe icon -->
+                            <svg class="w-64 h-64 text-brand-red/30 group-hover:text-brand-red/60 transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M8 7h12m0 0l4 4m-4-4v12m-12 0H4m0 0L0 11m4 8V7m12 0h-8M4 11h16M4 15h16" />
+                                <circle cx="6" cy="17" r="2" stroke-width="1"/>
+                                <circle cx="18" cy="17" r="2" stroke-width="1"/>
+                                <!-- abstract engine inside -->
+                                <rect x="9" y="10" width="6" height="4" stroke-width="1" />
+                            </svg>
+
+                            <div class="absolute bottom-4 left-4 text-xs font-mono text-brand-red opacity-50">DIAGRAMA_CHASIS_V2.1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="cta" class="py-24 bg-brand-dark relative overflow-hidden">
+        <!-- Glow effects -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-red opacity-10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-5xl md:text-6xl font-heading font-bold text-white uppercase mb-6">No lo sueñes. <span class="text-brand-red">Constrúyelo.</span></h2>
+            <p class="text-xl text-gray-400 font-light mb-10 max-w-2xl mx-auto">Obtén la guía técnica paso a paso (PDF) con diagramas de cableado, medidas de corte exactas y lista completa de proveedores para lograr este swap imposible.</p>
+            
+            <form class="max-w-md mx-auto bg-brand-gray/50 backdrop-blur p-8 rounded-xl border border-white/10 shadow-2xl" onsubmit="event.preventDefault(); showSuccessMessage();">
+                <div class="space-y-4">
+                    <div>
+                        <input type="text" required placeholder="Tu Nombre" class="w-full px-4 py-3 bg-black/50 border border-white/10 rounded focus:outline-none focus:border-brand-red text-white transition-colors">
+                    </div>
+                    <div>
+                        <input type="email" required placeholder="Tu Correo Electrónico" class="w-full px-4 py-3 bg-black/50 border border-white/10 rounded focus:outline-none focus:border-brand-red text-white transition-colors">
+                    </div>
+                    <button type="submit" class="w-full py-4 px-6 text-lg font-heading font-bold uppercase tracking-wider text-white bg-brand-red rounded hover:bg-red-700 hover:scale-[1.02] transition-all duration-300 border-glow border border-red-500">
+                        Descargar Guía Técnica Ahora
+                    </button>
+                    <p class="text-xs text-gray-500 mt-4">O si prefieres que nosotros hagamos el trabajo sucio, <a href="#" class="text-brand-red hover:underline">contacta a nuestro taller</a>.</p>
+                </div>
+            </form>
+
+            <div id="success-message" class="hidden mt-8 p-4 bg-green-900/30 border border-green-500 rounded text-green-400 font-medium">
+                ¡Solicitud recibida! Revisa tu correo en los próximos minutos para descargar la guía.
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <span class="font-heading font-bold text-xl tracking-wider text-white uppercase"><span class="text-brand-red">V8</span> POP</span>
+            </div>
+            <div class="text-sm text-gray-500">
+                &copy; 2024 V8 Pop Garage. Proyecto ilustrativo para entusiastas. No manejes rápido en vía pública.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Form submission simulation
+        function showSuccessMessage() {
+            const form = document.querySelector('form');
+            const message = document.getElementById('success-message');
+            form.style.display = 'none';
+            message.classList.remove('hidden');
+        }
+
+        // Navbar blur on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+                nav.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.style.backgroundColor = 'rgba(10, 10, 10, 0.8)';
+            }
+        });
+    </script>
+</body>
+</html>
